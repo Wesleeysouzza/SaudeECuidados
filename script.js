@@ -2,9 +2,8 @@ function calculateIMC() {
     var weight = document.getElementById('weight').value;
     var height = document.getElementById('height').value;
 
-    // Converter altura de centímetros para metros se o valor for maior que 3 metros
     if (height > 3) {
-        height = height / 100; // Transforma centímetros em metros
+        height = height / 100;
     }
 
     if (weight > 0 && height > 0) {
@@ -26,3 +25,12 @@ function calculateIMC() {
         document.getElementById('result').innerText = "Por favor, insira valores válidos para peso e altura.";
     }
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    var hamburger = document.querySelector('.hamburger');
+    var menu = document.querySelector('.menu');
+
+    hamburger.addEventListener('click', function () {
+        menu.classList.toggle('active');
+    });
+});

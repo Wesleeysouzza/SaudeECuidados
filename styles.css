@@ -1,56 +1,62 @@
-body,
-html {
-    margin: 0;
+body {
     font-family: Arial, sans-serif;
 }
 
-.header {
-    background: #f3f4f6;
+header {
+    background-color: #f8f8f8;
+    padding: 10px 20px;
+    text-align: left;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: relative;
-    z-index: 1000;
+}
+
+.hamburger {
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.menu {
+    display: none;
+    width: 100%;
+}
+
+.menu.active {
+    display: block;
 }
 
 .menu ul {
     list-style: none;
     padding: 0;
-    display: flex;
-    justify-content: space-around;
-    background: white;
-    margin: 0;
 }
 
-.menu li a {
+.menu ul li a {
     display: block;
-    padding: 15px;
+    padding: 10px;
     text-decoration: none;
     color: #333;
+    border-bottom: 1px solid #ddd;
 }
 
-.hamburger {
-    display: none;
-    font-size: 30px;
-    background: none;
-    border: none;
-    color: #333;
-    padding: 10px;
+.menu ul li a:hover {
+    background-color: #f0f0f0;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
     .hamburger {
-        display: block;
-    }
-
-    .menu ul {
-        position: absolute;
-        top: 45px;
-        left: 0;
-        right: 0;
-        flex-direction: column;
         display: none;
     }
 
-    .menu ul.show {
-        display: flex;
+    .menu {
+        display: block;
+    }
+
+    .menu ul li {
+        display: inline-block;
+    }
+
+    .menu ul li a {
+        padding: 10px 15px;
     }
 }
